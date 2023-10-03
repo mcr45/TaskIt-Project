@@ -1,0 +1,11 @@
+.conteiner{
+  display: flex;
+  flex-direction: column;
+height: 100%;
+padding: 15px;
+box-sizing: border-box;
+}
+
+.bottom_sidebar{
+  margin-top: auto;
+}
