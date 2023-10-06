@@ -9,3 +9,23 @@ box-sizing: border-box;
 .bottom_sidebar{
   margin-top: auto;
 }
+
+.user-profile{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.account{
+  display: flex;
+  flex-direction: column;
+}
+
+.user-profile img{
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+.user-profile p{
+  font-size: 13px;
+}
