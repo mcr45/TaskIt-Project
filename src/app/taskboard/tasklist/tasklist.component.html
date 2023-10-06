@@ -1,0 +1,13 @@
+
+<div class="board">
+<div class="bar">
+  <h6>Title</h6>
+  <h6>Due Date</h6>
+  <h6>Priority</h6>
+  <h6>Status</h6>
+  <h6>Actions</h6>
+</div>
+<app-task-component *ngFor="let t of tasksList" [task]="t" ></app-task-component>
+
+
+</div>
