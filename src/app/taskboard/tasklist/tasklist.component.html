@@ -1,13 +1,26 @@
-
+<div class="new-task-button"><button class="btn btn-success" (click)="showForm()">New Task</button></div>
 <div class="board">
 <div class="bar">
-  <h6>Title</h6>
-  <h6>Due Date</h6>
-  <h6>Priority</h6>
-  <h6>Status</h6>
-  <h6>Actions</h6>
+  <div class="header">
+    <h6>Title</h6>
+  </div>
+  <div class="header">
+    <h6>Due Date</h6>
+  </div>
+  <div class="header">
+    <h6>Priority</h6>
+  </div>
+  <div class="header">
+    <h6>Status</h6>
+  </div>
+  <div class="header">
+    <h6>Actions</h6>
+  </div>
 </div>
 <app-task-component *ngFor="let t of tasksList" [task]="t" ></app-task-component>
 
 
 </div>
+<app-newtask *ngIf="showF" (newtask)="OnTaskCreated($event)" (taskdone)="OnTaskDone($event)"></app-newtask>
+<!--
+proviamo cosi da qui -->

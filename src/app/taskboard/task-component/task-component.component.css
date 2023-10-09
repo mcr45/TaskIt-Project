@@ -1,4 +1,13 @@
 
 .taskrow{
-  display: flex;
+  box-sizing: border-box;
+  display: flex;/* s */
+  gap: 15%;
+  text-align: start;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10px;
+}
+.taskrow *{
+  width: 18%;
 }
