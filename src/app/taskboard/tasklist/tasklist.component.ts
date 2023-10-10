@@ -7,7 +7,7 @@ import { Component, Input } from '@angular/core';
 })
 export class TasklistComponent {
 
-tasksList=[{name:'clean',date:'20 Nov',priority:'High',status:"To Do"},{name:'cry intypescript',date:'10 Nov',priority:'Low',status:"To Do"},{name:'eat',date:'24 Nov',priority:'High',status:"To Do"}]
+tasksList=[{name:'clean',date:'Nov 20',priority:'High',status:"To Do"},{name:'dinner at Pappo"s',date:'Nov 10',priority:'Low',status:"To Do"},{name:'eat',date:'Nov 24',priority:'High',status:"To Do"}]
 ngOnInit(){console.log(this.tasksList)}
 /* oldtasknumber:number=0
 @Input() tasknumber:number=0

@@ -41,7 +41,7 @@
 
 <div class="container newtask">
   <div class="row">
-    <button class="btn btn-danger btn-danger1" (click)="OnCloseTask()">X</button>
+    <button class="btn btn-outline-light btn-danger1 " (click)="OnCloseTask()"><img src="assets/icons/ics.svg" alt=""></button>
   </div>
   <div class="row">
     <h3 id="formtitle">Add New Task</h3>
@@ -71,7 +71,7 @@
           <textarea
             class="form-control"
             id="taskdescription"
-            rows="3"
+            rows="4"
             [(ngModel)]="description"
             name="description"
           ></textarea>
@@ -105,7 +105,7 @@
         <div class="form-row">
           <div class="col-8">
             <div class="row button-row">
-              <button class="btn btn-danger">cancel</button>
+              <button class="btn btn-danger" (click)="OnCloseTask()">cancel</button>
               <button class="btn btn-success" (click)="addTask()">
                 create
               </button>

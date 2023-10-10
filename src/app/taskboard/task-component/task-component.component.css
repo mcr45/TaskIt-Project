@@ -11,3 +11,14 @@
 .taskrow *{
   width: 18%;
 }
+
+.taskicons{
+  /* width: 100%; */
+  display: flex;
+  gap: 9px;
+  justify-content: flex-start;
+}
+.taskicons img{
+  width: 16px;
+  height: 16px;
+}

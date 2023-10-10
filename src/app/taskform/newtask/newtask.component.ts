@@ -28,7 +28,7 @@ OnCloseTask(){
 addTask(){
   console.log(this.title + ''+ this.date+''+this.priority+''+this.description+''+this.status)
   /* this.newtask.emit({title:this.title,date:,priority:this.priority,description:this.description,status:this.status}) */
-  this.newtask.emit({title:this.title,date:new Date(this.date).toLocaleDateString('en-us', { weekday:"long", year:"numeric", month:"short", day:"numeric"}),priority:this.priority,description:this.description,status:this.status})
+  this.newtask.emit({title:this.title,date:new Date(this.date).toLocaleDateString('en-us', {   day:"numeric", month:"short"}),priority:this.priority,description:this.description,status:this.status})
 
 }
 
