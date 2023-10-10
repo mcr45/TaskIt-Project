@@ -17,7 +17,7 @@
     <h6>Actions</h6>
   </div>
 </div>
-<app-task-component *ngFor="let t of tasksList" [task]="t" ></app-task-component>
+<app-task-component *ngFor="let t of tasksList; let i = index" [task]="t" [taskindex]="i" (taskdeleted)="OnTaskDeleted($event)" ></app-task-component>
 
 
 </div>

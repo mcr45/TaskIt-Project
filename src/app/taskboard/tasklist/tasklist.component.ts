@@ -26,7 +26,10 @@ this.tasknumber++
 
  showF:boolean
 
+OnTaskDeleted(e){
+this.tasksList.splice(e,1)
 
+}
 
 
 
