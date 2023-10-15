@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Output, Input } from '@angular/core';
 
 @Component({
   selector: 'app-newtask',
@@ -6,6 +6,11 @@ import { Component, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./newtask.component.css']
 })
 export class NewtaskComponent {
+
+@Input() taskformobject:{name,date,priority,status}
+//PROBLEMA:ngmodel non mi cambia taskobject.name
+
+
 
 title:string
 date

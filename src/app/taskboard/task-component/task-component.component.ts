@@ -12,6 +12,11 @@ export class TaskComponentComponent {
   @Input() taskindex:number
 
   @Output() taskdeleted:EventEmitter<number>=new EventEmitter<number>()
+  @Output() taskedit:EventEmitter<number>=new EventEmitter<number>()
+
+  EditTask(){
+    this.taskedit.emit(this.taskindex)
+  }
 
   DeleteTask(){
 

@@ -1,0 +1,41 @@
+.newtask{
+
+  position: absolute;
+  top: 30%;
+  left: 18%;
+  width: 80%;
+  height: 75%;
+  border: solid black 1px;
+  border-radius: 25px;
+/*
+ backdrop-filter: blur(10px); */
+background-color: aliceblue;
+
+}
+.row{
+  z-index: 3;
+}
+.btn-danger1{
+  margin-left: 85%;
+ /*  color: black;
+  font-weight: bold;
+  padding: 10px;
+  height: 30px;
+  width: 30px; */
+  border: none;
+}
+
+.button-row{
+  display: flex;
+  padding: 10px;
+  flex-direction: row;
+justify-content: space-between;
+
+}
+
+
+#formtitle{
+  padding: 5px;
+  text-align: end;
+  margin-left: 15px;
+}

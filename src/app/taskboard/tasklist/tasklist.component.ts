@@ -26,6 +26,12 @@ this.tasknumber++
 
  showF:boolean
 
+ showFE:boolean//added
+
+ taskobject:{name,date,priority,status}
+
+ taskeditobject:{title,date,priority,status,id}//added
+
 OnTaskDeleted(e){
 this.tasksList.splice(e,1)
 
@@ -41,18 +47,45 @@ OnTaskCreated(e){
 
 }
 
+OnTaskEdit(e){/*
+this.taskobject={name:this.tasksList[e].name,date:this.tasksList[e].date,priority:this.tasksList[e].priority,status:this.tasksList[e].status}
+this.showF=!this.showF */
+this.showFE=true
+this.taskeditobject={title:this.tasksList[e].name,date:this.tasksList[e].date,priority:this.tasksList[e].priority,status:this.tasksList[e].status,id:e}
+
+
+}
+
 OnTaskDone(e){
   if(e){
     this.showF=!this.showF
   }
 }
+OnTaskEdited(e){
+if(e){
+  console.log(e)
+this.tasksList[e.id]={name:e.title,date:e.date,priority:e.priority,status:e.priority}
+/* console.log(this.tasksList.indexOf(e.title)) */
+this.showFE=false
+}
 
+
+}
 
 showForm(){
 this.showF=true
 
 }
+showEditForm(){
+  this.showFE=true
+}
 
 
+OnCloseEditTask(e){
+if(e){
+  this.showFE=false
+}
+
+}
 
 }

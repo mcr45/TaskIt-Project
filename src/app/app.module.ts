@@ -6,6 +6,7 @@ import { SidebarComponent } from './shared/sidebar/sidebar.component';
 import { TasklistComponent } from './taskboard/tasklist/tasklist.component';
 import { TaskComponentComponent } from './taskboard/task-component/task-component.component';
 import { NewtaskComponent } from './taskform/newtask/newtask.component';
+import { TaskeditComponent } from './taskform/taskedit/taskedit.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { NewtaskComponent } from './taskform/newtask/newtask.component';
     SidebarComponent,
     TasklistComponent,
     TaskComponentComponent,
-    NewtaskComponent
+    NewtaskComponent,
+    TaskeditComponent
   ],
   imports: [
     BrowserModule,FormsModule
