@@ -1,0 +1,38 @@
+<div class="main">
+  <!-- <app-kanbanitem *ngFor="let item of kanbanlist"  *ngIf="item==='red'"  ></app-kanbanitem>
+ -->
+  <div class="kanboard">
+    <div class="to-do">
+      <h6>To do</h6>
+      <div class="to-do-list">
+        <div class="tasks-list" *ngFor="let task of kanbanlist">
+          <div class="item" *ngIf="task.status==='To Do'? true : false" [task]="task">
+            {{task.name}}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="in-progress">
+      <h6>In progress</h6>
+      <div class="in-progress-list">
+        <div class="tasks-list" *ngFor="let t of kanbanlist">
+
+          <div class="item" *ngIf="t.status==='In progress'">
+            {{t.name}}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="done">
+      <h6>Done</h6>
+      <div class="done-list">
+        <div class="tasks-list" *ngFor="let tas of kanbanlist">
+          <div class="item" *ngIf="tas.status=='Done'">
+            {{tas.name}}
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- creare tre app components per todo in progress done subritte a service che cambianno con click -->
+  </div>
+</div>

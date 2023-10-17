@@ -7,6 +7,8 @@ import { TasklistComponent } from './taskboard/tasklist/tasklist.component';
 import { TaskComponentComponent } from './taskboard/task-component/task-component.component';
 import { NewtaskComponent } from './taskform/newtask/newtask.component';
 import { TaskeditComponent } from './taskform/taskedit/taskedit.component';
+import { KanbanlistComponent } from './kanban/kanbanlist/kanbanlist.component';
+import { KanbanitemComponent } from './kanban/kanbanitem/kanbanitem.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { TaskeditComponent } from './taskform/taskedit/taskedit.component';
     TasklistComponent,
     TaskComponentComponent,
     NewtaskComponent,
-    TaskeditComponent
+    TaskeditComponent,
+    KanbanlistComponent,
+    KanbanitemComponent
   ],
   imports: [
     BrowserModule,FormsModule
