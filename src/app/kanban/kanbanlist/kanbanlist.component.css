@@ -39,14 +39,57 @@ padding: 5px;
   padding:5px;
 background-color: whitesmoke;
 border-radius: 8px;
-height: 85px;
+height: 120px;
 margin-bottom: 5px;
 
 
 }
-.voidblock{
-  height:0%;
-  width: 0%;
-  display: none;
+
+.kanban-grid{
+height: 100%;width: 100%;
+display: grid;
+grid-template-columns: 6fr 4fr;
+grid-template-rows: repeat(3,1fr);
 
 }
+.name{
+  grid-column: 1;
+  grid-row: 1;
+}
+.date{
+  grid-column: 1;
+  grid-row: 3;
+}
+.priority{
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.togstatus{
+  border: solid red 1px;
+  grid-column: 2;
+  grid-row: 1;
+
+}
+/* #bottone{
+  width: 20px;
+  height: 15px;
+}
+#myDropDown{
+  width:25px;
+  height: 28px;
+
+} */
+.togstatus .btn-info{
+  height: 15px;
+  width: 15px;
+  font-size: 10px;
+  text-align: center;
+}
+
+.dropdown-menu{
+  width: 15px;
+}
+
+
+

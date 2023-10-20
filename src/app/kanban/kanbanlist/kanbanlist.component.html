@@ -6,9 +6,32 @@
       <h6>To do</h6>
       <div class="to-do-list">
         <div class="tasks-list">
-          <div  *ngFor="let task of kanbanlist">
-            <div class="item" *ngIf="task.status==='To Do'? true : false">
-              {{task.name}}
+          <div *ngFor="let task of kanbanlist">
+            <div class="item" *ngIf="task.status === 'To Do' ? true : false">
+              <!-- {{task.name}} -->
+              <div class="kanban-grid">
+                <h6 class="name">{{ task.name }}</h6>
+                <p class="priority">Priority:{{ task.priority }}</p>
+                <p class="date">Date:{{ task.date }}</p>
+                <div class="btn-group togstatus">
+                  <button type="button" class="btn btn-info">Info</button>
+                  <button type="button" class="btn btn-info dropdown-toggle dropdown-toggle-split" data-toggle="dropdown">
+                  </button>
+                  <div class="dropdown-menu show">
+                    <a class="dropdown-item" href="#">In progress</a>
+                    <a class="dropdown-item" href="#">Done</a>
+                  </div>
+                </div>
+                <!-- <div class="dropdown">
+                  <button id="bottone">Dropdown</button>
+                  <div id="myDropdown" class="dropdown-content">
+                    <a href="#">Link 1</a>
+                    <a href="#">Link 2</a>
+                    <a href="#">Link 3</a>
+                  </div>
+                </div> -->
+
+              </div>
             </div>
           </div>
         </div>
@@ -18,9 +41,9 @@
       <h6>In progress</h6>
       <div class="in-progress-list">
         <div class="tasks-list">
-          <div  *ngFor="let t of kanbanlist">
-            <div class="item" *ngIf="t.status==='In progress'? true : false">
-              {{t.name}}
+          <div *ngFor="let t of kanbanlist">
+            <div class="item" *ngIf="t.status === 'In progress' ? true : false">
+              {{ t.name }}
             </div>
           </div>
         </div>
@@ -30,9 +53,9 @@
       <h6>Done</h6>
       <div class="done-list">
         <div class="tasks-list">
-          <div  *ngFor="let tas of kanbanlist;">
-            <div class="item" *ngIf="tas.status=='Done'">
-              {{tas.name}}
+          <div *ngFor="let tas of kanbanlist">
+            <div class="item" *ngIf="tas.status == 'Done'">
+              {{ tas.name }}
             </div>
           </div>
         </div>
