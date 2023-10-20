@@ -4,7 +4,7 @@
   box-sizing: border-box;
   height: 100vh; */
   display: grid;
-  grid-template-columns: 3fr 7fr;
+  grid-template-columns: 2fr 8fr;
   height: 100vh;
   position: relative;
 /*

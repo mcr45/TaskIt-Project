@@ -14,9 +14,10 @@ height: 100%;
 }
 .to-do, .in-progress, .done{
 
-width: 38%;
+width: 41%;
 background-color: rgba(240, 229, 229, 0.857);
 border-radius: 5px;
+box-sizing: border-box;
 }
 
 .to-do-list, .in-progress-list, .done-list{
@@ -26,4 +27,26 @@ border-radius: 5px;
 
 .to-do-row{
   grid-column: 1;
+}
+
+.tasks-list{
+  box-sizing: border-box;
+padding: 5px;
+}
+
+.item{
+  box-sizing: border-box;
+  padding:5px;
+background-color: whitesmoke;
+border-radius: 8px;
+height: 85px;
+margin-bottom: 5px;
+
+
+}
+.voidblock{
+  height:0%;
+  width: 0%;
+  display: none;
+
 }
