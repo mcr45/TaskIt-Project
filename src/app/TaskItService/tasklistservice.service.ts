@@ -31,7 +31,7 @@ export class TasklistserviceService {
 
   getTasks(){
 
-return this.kanbanlist.slice()
+return this.kanbanlist
 
   }
 
@@ -49,10 +49,10 @@ removeTask(id:number){
   this.listchanged.emit(this.kanbanlist.slice())
 
 }
-editTask(id:number,val:string){
+editTask(t:{name: string;date: string,status: string,priority: string},val:string){
 
-
-
+this.kanbanlist[this.kanbanlist.indexOf(t)].status=val
+this.listchanged.emit(this.kanbanlist)
 }
 
 

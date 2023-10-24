@@ -13,15 +13,14 @@
                 <h6 class="name">{{ task.name }}</h6>
                 <p class="priority">Priority:{{ task.priority }}</p>
                 <p class="date">Date:{{ task.date }}</p>
-                <div class="btn-group togstatus">
-                  <button type="button" class="btn btn-info">Info</button>
-                  <button type="button" class="btn btn-info dropdown-toggle dropdown-toggle-split" data-toggle="dropdown">
-                  </button>
-                  <div class="dropdown-menu show">
-                    <a class="dropdown-item drop-a"  href="#">In progress</a>
-                    <a class="dropdown-item drop-b" href="#">Done</a>
-                  </div>
-                </div>
+
+                <select name="letasks" id="letasks" (click)="demo($event,task)" class="task-select blue">
+                  <option value="To Do">To Do</option>
+                  <option value="Done">Done</option>
+                  <option value="In progress">In progress</option>
+
+                </select>
+
               </div>
             </div>
           </div>
@@ -39,15 +38,13 @@
                 <h6 class="name">{{ task.name }}</h6>
                 <p class="priority">Priority:{{ task.priority }}</p>
                 <p class="date">Date:{{ task.date }}</p>
-                <div class="btn-group togstatus">
-                  <button type="button" class="btn btn-info">Info</button>
-                  <button type="button" class="btn btn-info dropdown-toggle dropdown-toggle-split" data-toggle="dropdown">
-                  </button>
-                  <div class="dropdown-menu show">
-                    <a class="dropdown-item drop-a" href="#">To Do</a>
-                    <a class="dropdown-item drop-b" href="#">Done</a>
-                  </div>
-                </div>
+
+                <select name="letasks" id="letasks" (click)="demo($event,task)" class="task-select green">
+                  <option value="In progress">In progress</option>
+                  <option value="Done">Done</option>
+                  <option value="To Do">To Do</option>
+                </select>
+
               </div>
             </div>
           </div>
@@ -66,11 +63,10 @@
                 <p class="priority">Priority:{{ task.priority }}</p>
                 <p class="date">Date:{{ task.date }}</p>
                 <!-- cambio qui -->
-               <select name="cars" id="cars" (click)="demo($event,task)">
-    <option value="done">Done</option>
-    <option value="in progress">In progress</option>
+               <select name="letasks" id="letasks" (click)="demo($event,task)" class="task-select pink">
+    <option value="Done">Done</option>
+    <option value="In progress">In progress</option>
     <option value="To Do">To Do</option>
-
   </select>
                 <!--  invio task al evento. task indexOf. poi modifico -->
               </div>

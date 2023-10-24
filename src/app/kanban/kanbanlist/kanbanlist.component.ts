@@ -30,9 +30,14 @@ export class KanbanlistComponent implements OnInit{
   ngOnInit(){
     this.kanbanlist=this.taskitservice.getTasks()
     this.taskitservice.listchanged.subscribe((tasks)=>{
+      console.log('eccomi')
       this.kanbanlist=tasks
     })
+    console.log('hey')
   }
+
+
+
 
   checktodostatus(t: { name; date; priority; status }) {
     if (t.status === 'To Do') {
@@ -46,6 +51,9 @@ export class KanbanlistComponent implements OnInit{
   }
   demo(e,t){
     console.log(e.target.value,t)
+    this.taskitservice.editTask(t,e.target.value)
+
+  console.log(this.kanbanlist)
   }
 OnEdit(id,value){
 
