@@ -44,7 +44,11 @@ export class KanbanlistComponent implements OnInit{
       return true;
     }
   }
-  demo(e){
-    console.log(e)
+  demo(e,t){
+    console.log(e.target.value,t)
   }
+OnEdit(id,value){
+
+}
+
 }

@@ -65,15 +65,14 @@
                 <h6 class="name">{{ task.name }}</h6>
                 <p class="priority">Priority:{{ task.priority }}</p>
                 <p class="date">Date:{{ task.date }}</p>
-                <div class="btn-group togstatus">
-                  <button type="button" class="btn btn-info">Info</button>
-                  <button type="button" class="btn btn-info dropdown-toggle dropdown-toggle-split" data-toggle="dropdown">
-                  </button>
-                  <div class="dropdown-menu show" (click)="demo(task)">
-                    <a class="dropdown-item drop-a"  href="#">To Do</a>
-                    <a class="dropdown-item drop-b" href="#">In progress</a>
-                  </div>
-                </div><!--  invio task al evento. task indexOf. poi modifico -->
+                <!-- cambio qui -->
+               <select name="cars" id="cars" (click)="demo($event,task)">
+    <option value="done">Done</option>
+    <option value="in progress">In progress</option>
+    <option value="To Do">To Do</option>
+
+  </select>
+                <!--  invio task al evento. task indexOf. poi modifico -->
               </div>
             </div>
           </div>
