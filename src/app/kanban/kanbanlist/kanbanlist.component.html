@@ -69,11 +69,11 @@
                   <button type="button" class="btn btn-info">Info</button>
                   <button type="button" class="btn btn-info dropdown-toggle dropdown-toggle-split" data-toggle="dropdown">
                   </button>
-                  <div class="dropdown-menu show">
+                  <div class="dropdown-menu show" (click)="demo(task)">
                     <a class="dropdown-item drop-a"  href="#">To Do</a>
                     <a class="dropdown-item drop-b" href="#">In progress</a>
                   </div>
-                </div>
+                </div><!--  invio task al evento. task indexOf. poi modifico -->
               </div>
             </div>
           </div>

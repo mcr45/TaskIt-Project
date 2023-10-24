@@ -49,7 +49,8 @@ removeTask(id:number){
   this.listchanged.emit(this.kanbanlist.slice())
 
 }
-editTask(id:number){
+editTask(id:number,val:string){
+
 
 
 }
