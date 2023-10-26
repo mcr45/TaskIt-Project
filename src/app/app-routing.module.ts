@@ -9,25 +9,19 @@ import { NewtaskComponent } from './taskform/newtask/newtask.component';
 import { TaskeditComponent } from './taskform/taskedit/taskedit.component';
 import { KanbanlistComponent } from './kanban/kanbanlist/kanbanlist.component';
 import { KanbanitemComponent } from './kanban/kanbanitem/kanbanitem.component';
-import { AppRoutingModule } from './app-routing.module';
+
+import { RouterModule,Routes } from '@angular/router';
+
+const appRoutes:Routes=[/* {path:'',redirectTo:'/home', pathMatch:'full'} */,
+/* {path:'',component:AppComponent} */,
+{path:'tasks',component:TasklistComponent},
+{path:'kanban',component:KanbanlistComponent}
+
+];
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    SidebarComponent,
-    TasklistComponent,
-    TaskComponentComponent,
-    NewtaskComponent,
-    TaskeditComponent,
-    KanbanlistComponent,
-    KanbanitemComponent
-  ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    AppRoutingModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+  imports:[RouterModule.forRoot(appRoutes)],
+  exports:[RouterModule]
 })
-export class AppModule { }
+
+export class AppRoutingModule{}
