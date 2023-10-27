@@ -1,27 +1,49 @@
-<div class="new-task-button"><button class="btn btn-success" (click)="showForm()">New Task</button></div>
-<div class="board">
-<div class="bar">
-  <div class="header">
-    <h6>Title</h6>
-  </div>
-  <div class="header">
-    <h6>Due Date</h6>
-  </div>
-  <div class="header">
-    <h6>Priority</h6>
-  </div>
-  <div class="header">
-    <h6>Status</h6>
-  </div>
-  <div class="header">
-    <h6>Actions</h6>
-  </div>
-</div>
-<app-task-component *ngFor="let t of tasksList; let i = index" [task]="t" [taskindex]="i" (taskdeleted)="OnTaskDeleted($event)" (taskedit)="OnTaskEdit($event)"></app-task-component>
+<!-- title -->
+<main>
 
+  <h1>Tasks List</h1>
 
-</div>
-<app-newtask *ngIf="showF" (newtask)="OnTaskCreated($event)" (taskdone)="OnTaskDone($event)" [taskformobject]="taskobject" ></app-newtask>
-<app-taskedit *ngIf="showFE"   [tasktoedit]="taskeditobject"  (editedTask)="OnTaskEdited($event)" (doneedit)="OnCloseEditTask($event)" ></app-taskedit>
+  <div class="new-task-button">
+    <button class="btn btn-success" (click)="showForm()">New Task</button>
+  </div>
+  <div class="board">
+    <div class="bar">
+      <div class="header">
+        <h6>Title</h6>
+      </div>
+      <div class="header">
+        <h6>Due Date</h6>
+      </div>
+      <div class="header">
+        <h6>Priority</h6>
+      </div>
+      <div class="header">
+        <h6>Status</h6>
+      </div>
+      <div class="header">
+        <h6>Actions</h6>
+      </div>
+    </div>
+    <app-task-component
+      *ngFor="let t of tasksList; let i = index"
+      [task]="t"
+      [taskindex]="i"
+      (taskdeleted)="OnTaskDeleted($event)"
+      (taskedit)="OnTaskEdit($event)"
+    ></app-task-component>
+  </div>
+  <app-newtask
+    *ngIf="showF"
+    (newtask)="OnTaskCreated($event)"
+    (taskdone)="OnTaskDone($event)"
+    [taskformobject]="taskobject"
+  ></app-newtask>
+  <app-taskedit
+    *ngIf="showFE"
+    [tasktoedit]="taskeditobject"
+    (editedTask)="OnTaskEdited($event)"
+    (doneedit)="OnCloseEditTask($event)"
+  ></app-taskedit>
+</main>
 <!--
 proviamo cosi da qui -->
