@@ -33,7 +33,7 @@ export class KanbanlistComponent implements OnInit{
       console.log('eccomi')
       this.kanbanlist=tasks
     })
-    console.log('hey')
+
   }
 
 

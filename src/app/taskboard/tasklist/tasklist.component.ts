@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { TasklistserviceService } from 'src/app/TaskItService/tasklistservice.service';
 
 @Component({
   selector: 'app-tasklist',
@@ -7,8 +8,18 @@ import { Component, Input } from '@angular/core';
 })
 export class TasklistComponent {
 
+ constructor(private taskserv:TasklistserviceService){}
+ tasksList
+/*
 tasksList=[{name:'clean',date:'Nov 20',priority:'High',status:"To Do"},{name:'dinner at Pappo"s',date:'Nov 10',priority:'Low',status:"To Do"},{name:'eat',date:'Nov 24',priority:'High',status:"To Do"}]
-ngOnInit(){console.log(this.tasksList)}
+ngOnInit(){console.log(this.tasksList)} */
+
+ngOnInit(){
+  this.tasksList=this.taskserv.getTasks()
+  this.taskserv.listchanged.subscribe((tasks)=>{this.tasksList=tasks})
+}
+
+
 /* oldtasknumber:number=0
 @Input() tasknumber:number=0
 @Input()  tasktoadd
@@ -64,7 +75,7 @@ OnTaskDone(e){
 OnTaskEdited(e){
 if(e){
   console.log(e)
-this.tasksList[e.id]={name:e.title,date:e.date,priority:e.priority,status:e.priority}
+this.tasksList[e.id]={name:e.title,date:e.date,priority:e.priority,status:e.status}
 /* console.log(this.tasksList.indexOf(e.title)) */
 this.showFE=false
 }

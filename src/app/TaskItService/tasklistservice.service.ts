@@ -1,17 +1,16 @@
 import { EventEmitter, Injectable, Output } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class TasklistserviceService {
-
-  constructor() { }
+  constructor() {}
 
   kanbanlist: {
-    name: string,
-    date: string,
-    status: string,
-    priority: string
+    name: string;
+    date: string;
+    status: string;
+    priority: string;
   }[] = [
     { name: 'clean', date: 'Nov 20', priority: 'High', status: 'To Do' },
     {
@@ -20,41 +19,45 @@ export class TasklistserviceService {
       priority: 'Low',
       status: 'In progress',
     },
-    { name: 'eat', date: 'Nov 24', priority: 'High', status: 'Done' }, { name: 'run', date: 'Nov 25', priority: 'High', status: 'Done' },
+    { name: 'eat', date: 'Nov 24', priority: 'High', status: 'Done' },
+    { name: 'run', date: 'Nov 25', priority: 'High', status: 'Done' },
   ];
 
-  @Output() listchanged= new EventEmitter<{name: string, date: string,status: string,priority: string}[]>()
-  @Output() taskselected= new EventEmitter<{name: string,
-    date: string,
-    status: string,
-    priority: string}>()
+  @Output() listchanged = new EventEmitter<
+    { name: string; date: string; status: string; priority: string }[]
+  >();
+  @Output() taskselected = new EventEmitter<{
+    name: string;
+    date: string;
+    status: string;
+    priority: string;
+  }>();
 
-  getTasks(){
-
-return this.kanbanlist
-
+  getTasks() {
+    return this.kanbanlist;
   }
 
-  saveTask(t:{name: string,
-    date: string,
-    status: string,
-    priority: string}){
+  saveTask(t: {
+    name: string;
+    date: string;
+    status: string;
+    priority: string;
+  }) {
+    this.kanbanlist.push(t);
+    this.listchanged.emit(this.kanbanlist.slice());
+  }
 
-this.kanbanlist.push(t)
-this.listchanged.emit(this.kanbanlist.slice())
-    }
-
-removeTask(id:number){
-  this.kanbanlist.splice(id,1)
-  this.listchanged.emit(this.kanbanlist.slice())
-
-}
-editTask(t:{name: string;date: string,status: string,priority: string},val:string){
-
-this.kanbanlist[this.kanbanlist.indexOf(t)].status=val
-this.listchanged.emit(this.kanbanlist)
-}
-
+  removeTask(id: number) {
+    this.kanbanlist.splice(id, 1);
+    this.listchanged.emit(this.kanbanlist.slice());
+  }
+  editTask(
+    t: { name: string; date: string; status: string; priority: string },
+    val: string
+  ) {
+    this.kanbanlist[this.kanbanlist.indexOf(t)].status = val;
+    this.listchanged.emit(this.kanbanlist);
+  }
 
 
 }
