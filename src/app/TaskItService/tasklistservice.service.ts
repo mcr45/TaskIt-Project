@@ -34,7 +34,7 @@ export class TasklistserviceService {
   }>();
 
   getTasks() {
-    return this.kanbanlist;
+    return this.kanbanlist.slice();
   }
 
   saveTask(t: {
@@ -59,5 +59,10 @@ export class TasklistserviceService {
     this.listchanged.emit(this.kanbanlist);
   }
 
+  tasklistEdit(id,t:{name,date,priority,status}){
+
+      this.kanbanlist[id]=t
+      this.listchanged.emit(this.kanbanlist)
+  }
 
 }

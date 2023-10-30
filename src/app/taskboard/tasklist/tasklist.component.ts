@@ -52,8 +52,9 @@ this.tasksList.splice(e,1)
 
 OnTaskCreated(e){
 
-
-  this.tasksList.push({name:e.title,date:e.date,priority:e.priority,status:e.status})
+/*
+  this.tasksList.push({name:e.title,date:e.date,priority:e.priority,status:e.status}) */
+  this.taskserv.saveTask({name:e.title,date:e.date,priority:e.priority,status:e.status})
   this.showF=!this.showF
 
 }
@@ -73,10 +74,11 @@ OnTaskDone(e){
   }
 }
 OnTaskEdited(e){
-if(e){
+if(e){/*
   console.log(e)
-this.tasksList[e.id]={name:e.title,date:e.date,priority:e.priority,status:e.status}
+this.tasksList[e.id]={name:e.title,date:e.date,priority:e.priority,status:e.status} */
 /* console.log(this.tasksList.indexOf(e.title)) */
+this.taskserv.tasklistEdit(e.id,{name:e.title,date:e.date,priority:e.priority,status:e.status})
 this.showFE=false
 }
 
