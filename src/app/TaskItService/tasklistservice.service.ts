@@ -65,4 +65,9 @@ export class TasklistserviceService {
       this.listchanged.emit(this.kanbanlist)
   }
 
+  tasklistDelete(id){
+    this.kanbanlist.splice(id,1)
+    this.listchanged.emit(this.kanbanlist)
+  }
+
 }

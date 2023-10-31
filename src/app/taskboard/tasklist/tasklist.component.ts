@@ -44,7 +44,9 @@ this.tasknumber++
  taskeditobject:{title,date,priority,status,id}//added
 
 OnTaskDeleted(e){
-this.tasksList.splice(e,1)
+  /* console.log(e)
+this.tasksList.splice(e,1) */
+this.taskserv.tasklistDelete(e)
 
 }
 

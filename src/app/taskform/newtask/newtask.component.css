@@ -4,7 +4,7 @@
   top: 30%;
   left: 18%;
   width: 80%;
-  height: 75%;
+  height: 85%;
   border: solid black 1px;
   border-radius: 25px;
 /*
@@ -38,4 +38,8 @@ justify-content: space-between;
   padding: 5px;
   text-align: end;
   margin-left: 15px;
+}
+
+form .ng-touched.ng-invalid{
+  outline: red 1px solid;
 }

@@ -46,7 +46,7 @@
   <div class="row">
     <h3 id="formtitle">Add New Task</h3>
   </div>
-  <form>
+  <form (ngSubmit)="OnFormSubmit(newTaskForm)" #newTaskForm="ngForm">
     <div class="form-row">
       <div class="form-group col-md-6">
         <label for="tasktitle">Title</label>
@@ -55,13 +55,17 @@
           class="form-control"
           id="tasktitle"
           placeholder="clean the room or something"
-          [(ngModel)]=" title"
+          ngModel
           name="title"
+          required
+          #titleRef="ngModel"
         />
+        <span class="help-block text-danger" *ngIf="!titleRef.valid && titleRef.touched">You can't just do nothing all day!!</span>
       </div>
       <div class="form-group col-md-6">
         <label for="taskdate">Date:</label>
-        <input type="date" class="form-control" id="taskdate" [(ngModel)]="date" name="date"/>
+        <input type="date" class="form-control" id="taskdate" ngModel name="date" required #dateRef="ngModel" />
+        <span class="help-block text-danger" *ngIf="!dateRef.valid && dateRef.touched">When?Set a date</span>
       </div>
     </div>
     <div class="form-row">
@@ -72,8 +76,8 @@
             class="form-control"
             id="taskdescription"
             rows="4"
-            [(ngModel)]="description"
-            name="description"
+            ngModel
+            name="description"  #descriptionRef="ngModel"
           ></textarea>
         </div>
       </div>
@@ -82,11 +86,12 @@
           <div class="col-8">
             <div class="form-group">
               <label for="priority">Priority</label>
-              <select class="form-control" id="priority" [(ngModel)]="priority" name="priority">
+              <select class="form-control" id="priority" ngModel="High" name="priority" required #priorityRef="ngModel" >
                 <option>High</option>
                 <option>Medium</option>
                 <option>Low</option>
               </select>
+              <span class="help-block text-danger" *ngIf="priorityRef.touched && !priorityRef.valid">Priority are important in life</span>
             </div>
           </div>
         </div>
@@ -94,11 +99,12 @@
           <div class="col-8">
             <div class="form-group">
               <label for="Status">Status</label>
-              <select class="form-control" id="status" [(ngModel)]="status" name="status">
+              <select class="form-control" id="status" ngModel="To Do" name="status" required #statusRef="ngModel"  >
                 <option>To Do</option>
                 <option>Done</option>
                 <option>In progress</option>
               </select>
+              <span class="help-block text-danger" *ngIf="statusRef.touched && !statusRef.valid">So...are you done?</span>
             </div>
           </div>
         </div>
@@ -106,7 +112,7 @@
           <div class="col-8">
             <div class="row button-row">
               <button class="btn btn-danger" (click)="OnCloseTask()">cancel</button>
-              <button class="btn btn-success" (click)="addTask()">
+              <button class="btn btn-success" type="submit" [disabled]="!newTaskForm.valid" >
                 create
               </button>
             </div>

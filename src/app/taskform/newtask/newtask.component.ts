@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Output, Input } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-newtask',
@@ -34,6 +35,14 @@ addTask(){
   console.log(this.title + ''+ this.date+''+this.priority+''+this.description+''+this.status)
   /* this.newtask.emit({title:this.title,date:,priority:this.priority,description:this.description,status:this.status}) */
   this.newtask.emit({title:this.title,date:new Date(this.date).toLocaleDateString('en-us', {   day:"numeric", month:"short"}),priority:this.priority,description:this.description,status:this.status})
+
+}
+
+OnFormSubmit(f:NgForm){
+
+  /* console.log(f.value.status) */
+  this.newtask.emit({title:f.value.title,date:new Date(f.value.date).toLocaleDateString('en-us', {   day:"numeric", month:"short"}),priority:f.value.priority,description:f.value.description,status:f.value.status})
+
 
 }
 

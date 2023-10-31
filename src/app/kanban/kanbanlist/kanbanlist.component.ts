@@ -30,7 +30,7 @@ export class KanbanlistComponent implements OnInit{
   ngOnInit(){
     this.kanbanlist=this.taskitservice.getTasks()
     this.taskitservice.listchanged.subscribe((tasks)=>{
-      console.log('eccomi')
+
       this.kanbanlist=tasks
     })
 
