@@ -10,6 +10,7 @@ import { TaskeditComponent } from './taskform/taskedit/taskedit.component';
 import { KanbanlistComponent } from './kanban/kanbanlist/kanbanlist.component';
 import { KanbanitemComponent } from './kanban/kanbanitem/kanbanitem.component';
 import { AppRoutingModule } from './app-routing.module';
+import { FormvalidatorDirective } from './TaskItDirectives/formvalidator.directive';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { AppRoutingModule } from './app-routing.module';
     NewtaskComponent,
     TaskeditComponent,
     KanbanlistComponent,
-    KanbanitemComponent
+    KanbanitemComponent,
+    FormvalidatorDirective
   ],
   imports: [
     BrowserModule,

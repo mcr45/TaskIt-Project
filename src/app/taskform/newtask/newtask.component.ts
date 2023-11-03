@@ -11,7 +11,7 @@ export class NewtaskComponent {
 @Input() taskformobject:{name,date,priority,status}
 //PROBLEMA:ngmodel non mi cambia taskobject.name
 
-
+mindate=new Date().getFullYear().toString()+'-'+new Date().getMonth().toString()+'-'+new Date().getDay().toString()
 
 title:string
 date

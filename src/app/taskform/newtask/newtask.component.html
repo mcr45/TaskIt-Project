@@ -64,8 +64,12 @@
       </div>
       <div class="form-group col-md-6">
         <label for="taskdate">Date:</label>
-        <input type="date" class="form-control" id="taskdate" ngModel name="date" required #dateRef="ngModel" />
-        <span class="help-block text-danger" *ngIf="!dateRef.valid && dateRef.touched">When?Set a date</span>
+        <input type="date" class="form-control" id="taskdate" appFormvalidator [class.is-invalid]="(dateRef.touched|| dateRef.dirty)&&dateRef.errors?.dateinvalid" ngModel [value]="'2012-02-02'" name="date" required #dateRef="ngModel" /><!-- date must be from today on -->
+        <!-- <span class="help-block text-danger" *ngIf="(!dateRef.valid && dateRef.touched)&& !dateRef.value">When?Set a date</span><span *ngIf="(dateRef.dirty && dateRef.touched)&& dateRef.errors">date must be from now on</span> -->
+        <div *ngIf="!dateRef.valid && dateRef.touched">
+          <span *ngIf="!dateRef.value">Please set a date</span>
+          <span *ngIf="(dateRef.dirty && dateRef.touched)&&dateRef.errors">Date must be from now on</span>
+        </div>
       </div>
     </div>
     <div class="form-row">
