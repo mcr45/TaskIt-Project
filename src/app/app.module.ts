@@ -12,6 +12,7 @@ import { KanbanitemComponent } from './kanban/kanbanitem/kanbanitem.component';
 import { AppRoutingModule } from './app-routing.module';
 import { FormvalidatorDirective } from './TaskItDirectives/formvalidator.directive';
 import { BoredComponent } from './bored/bored/bored.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { BoredComponent } from './bored/bored/bored.component';
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

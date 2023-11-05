@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./bored.component.css']
 })
 export class BoredComponent {
+
+constructor(private http:HttpClient){}
+
+
+
+
 
 }
