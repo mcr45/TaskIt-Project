@@ -11,6 +11,7 @@ import { KanbanlistComponent } from './kanban/kanbanlist/kanbanlist.component';
 import { KanbanitemComponent } from './kanban/kanbanitem/kanbanitem.component';
 import { AppRoutingModule } from './app-routing.module';
 import { FormvalidatorDirective } from './TaskItDirectives/formvalidator.directive';
+import { BoredComponent } from './bored/bored/bored.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { FormvalidatorDirective } from './TaskItDirectives/formvalidator.directi
     TaskeditComponent,
     KanbanlistComponent,
     KanbanitemComponent,
-    FormvalidatorDirective
+    FormvalidatorDirective,
+    BoredComponent
   ],
   imports: [
     BrowserModule,

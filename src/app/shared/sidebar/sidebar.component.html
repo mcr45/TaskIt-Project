@@ -1,10 +1,11 @@
 <div class="conteiner">
   <div class="top_sidebar">
-    <h1 style="color: green;">TASK<span style="color: black;">IT</span>
+    <h1 style="color: green;" (click)="GoHome()">TASK<span style="color: black;">IT</span>
     </h1>
     <div style="display: flex; flex-direction: column;gap: 15px;width: 95px;justify-content: center;align-items: center;">
       <button class="btn btn-success" (click)="GoToTask()">Task List</button>
     <button class="btn btn-success" (click)="GoToKanban()">KanBan</button>
+    <button class="btn btn-success" (click)="GoBored()">I'm bored</button>
     </div>
   </div>
 

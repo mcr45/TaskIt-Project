@@ -9,13 +9,15 @@ import { NewtaskComponent } from './taskform/newtask/newtask.component';
 import { TaskeditComponent } from './taskform/taskedit/taskedit.component';
 import { KanbanlistComponent } from './kanban/kanbanlist/kanbanlist.component';
 import { KanbanitemComponent } from './kanban/kanbanitem/kanbanitem.component';
-
+import { BoredComponent } from './bored/bored/bored.component';
 import { RouterModule,Routes } from '@angular/router';
+
 
 const appRoutes:Routes=[/* {path:'',redirectTo:'/home', pathMatch:'full'} */,
 /* {path:'',component:AppComponent} */,
 {path:'tasks',component:TasklistComponent},
-{path:'kanban',component:KanbanlistComponent}
+{path:'kanban',component:KanbanlistComponent},
+{path:'bored',component:BoredComponent}
 
 ];
 

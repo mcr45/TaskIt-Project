@@ -20,5 +20,13 @@ GoToKanban(){
   this.router.navigate(['/kanban'],{relativeTo:this.route})
 }
 
+GoHome(){
+  this.router.navigate(['/'],{relativeTo:this.route})
+}
+
+GoBored(){
+  this.router.navigate(['/bored'],{relativeTo:this.route})
+}
+
 
 }
