@@ -6,16 +6,17 @@
         <p>Let's find something to do</p>
       </div>
       <div class="button">
-        <button class="btn btn-success">Regenerate Task</button>
+        <button class="btn btn-success" (click)="newTask()">Regenerate Task</button>
       </div>
     </div>
     <div class="down">
 
-      <div class="card">
-        <div class="apitask"></div>
-        <div class="addbutton"><img src="/assets/icons/plus.svg" alt="" srcset=""></div>
+      <div class="card" *ngIf="apicalled">
+        <div class="apitask"><h4>{{ntask}}</h4></div>
+        <div class="addbutton"><img src="/assets/icons/plus.svg" alt="" srcset="" (click)="openForm()"></div>
       </div>
 
     </div>
   </div>
 </div>
+<app-newtask *ngIf="taskform" (taskdone)="closeForm()" (newtask)="addTask($event)" [tasktitle]="ntask"></app-newtask>

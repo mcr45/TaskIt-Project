@@ -39,8 +39,16 @@ padding: 25px;
 
 }
 .apitask{
+  margin-top: 35px;
   flex: 1;
   min-height: 80%;
+  justify-self: center;
+  align-self: center;
+}
+.apitask h4{
+color: green;
+font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+font-weight: 700;
 }
 .addbutton{
   align-self: flex-end;

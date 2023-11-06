@@ -22,6 +22,9 @@ status
 @Output() newtask:EventEmitter<{title,date,priority,description,status}>=new EventEmitter<{title,date,priority,description,status}>()
 /* taskdone:boolean */
 
+
+@Input() tasktitle:string|null=''
+
 @Output() taskdone:EventEmitter<boolean>=new EventEmitter<boolean>()
 
 
@@ -35,7 +38,7 @@ addTask(){
   console.log(this.title + ''+ this.date+''+this.priority+''+this.description+''+this.status)
   /* this.newtask.emit({title:this.title,date:,priority:this.priority,description:this.description,status:this.status}) */
   this.newtask.emit({title:this.title,date:new Date(this.date).toLocaleDateString('en-us', {   day:"numeric", month:"short"}),priority:this.priority,description:this.description,status:this.status})
-
+  this.taskdone.emit()
 }
 
 OnFormSubmit(f:NgForm){
@@ -43,7 +46,7 @@ OnFormSubmit(f:NgForm){
   /* console.log(f.value.status) */
   this.newtask.emit({title:f.value.title,date:new Date(f.value.date).toLocaleDateString('en-us', {   day:"numeric", month:"short"}),priority:f.value.priority,description:f.value.description,status:f.value.status})
 
-
+  this.taskdone.emit()
 }
 
 
