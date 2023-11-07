@@ -1,0 +1,15 @@
+
+
+.main{
+  height: 100vh;
+}
+.sidebar{
+  width: 244px;
+  position:fixed;
+  height:100vh;
+  border-right: solid 1px black;
+}
+.content{
+  padding-left:244px;
+  height:130%;
+}

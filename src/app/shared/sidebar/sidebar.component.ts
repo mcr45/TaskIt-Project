@@ -14,18 +14,18 @@ export class SidebarComponent {
 
 
 GoToTask (){
-  this.router.navigate(['/tasks'],{relativeTo:this.route})
+  this.router.navigate(['/home/tasks'],{relativeTo:this.route})
 }
 GoToKanban(){
-  this.router.navigate(['/kanban'],{relativeTo:this.route})
+  this.router.navigate(['/home/kanban'],{relativeTo:this.route})
 }
 
 GoHome(){
-  this.router.navigate(['/'],{relativeTo:this.route})
+  this.router.navigate(['/home'],{relativeTo:this.route})
 }
 
 GoBored(){
-  this.router.navigate(['/bored'],{relativeTo:this.route})
+  this.router.navigate(['/home/bored'],{relativeTo:this.route})
 }
 
 

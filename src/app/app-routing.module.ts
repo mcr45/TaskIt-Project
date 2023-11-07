@@ -11,13 +11,17 @@ import { KanbanlistComponent } from './kanban/kanbanlist/kanbanlist.component';
 import { KanbanitemComponent } from './kanban/kanbanitem/kanbanitem.component';
 import { BoredComponent } from './bored/bored/bored.component';
 import { RouterModule,Routes } from '@angular/router';
+import { LandingpageComponent } from './authentication/landingpage/landingpage.component';
+import { HomeComponent } from './home/home.component';
 
 
 const appRoutes:Routes=[/* {path:'',redirectTo:'/home', pathMatch:'full'} */,
 /* {path:'',component:AppComponent} */,
-{path:'tasks',component:TasklistComponent},
+{path:'',component:LandingpageComponent,pathMatch:'full'},
+{path:'home',component:HomeComponent,children:[{path:'tasks',component:TasklistComponent},
 {path:'kanban',component:KanbanlistComponent},
-{path:'bored',component:BoredComponent}
+{path:'bored',component:BoredComponent}]},
+
 
 ];
 
