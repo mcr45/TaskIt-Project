@@ -36,7 +36,16 @@ export class TasklistserviceService {
   getTasks() {
     return this.kanbanlist.slice();
   }
-
+  saveTasks(tasks:{
+    name: string;
+    date: string;
+    status: string;
+    priority: string;
+  }[]){
+    this.kanbanlist=tasks
+    this.listchanged.emit(this.kanbanlist.slice());
+    console.log(this.kanbanlist)
+  }
   saveTask(t: {
     name: string;
     date: string;

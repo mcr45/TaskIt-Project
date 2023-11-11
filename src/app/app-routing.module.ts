@@ -13,11 +13,12 @@ import { BoredComponent } from './bored/bored/bored.component';
 import { RouterModule,Routes } from '@angular/router';
 import { LandingpageComponent } from './authentication/landingpage/landingpage.component';
 import { HomeComponent } from './home/home.component';
-
+import { SignuppageComponent } from './authentication/signuppage/signuppage.component';
 
 const appRoutes:Routes=[/* {path:'',redirectTo:'/home', pathMatch:'full'} */,
 /* {path:'',component:AppComponent} */,
-{path:'',component:LandingpageComponent,pathMatch:'full'},
+{path:'',component:LandingpageComponent,pathMatch:'full',children:[]},
+{path:'signup',component:SignuppageComponent},
 {path:'home',component:HomeComponent,children:[{path:'tasks',component:TasklistComponent},
 {path:'kanban',component:KanbanlistComponent},
 {path:'bored',component:BoredComponent}]},

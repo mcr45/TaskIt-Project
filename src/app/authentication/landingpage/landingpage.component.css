@@ -12,18 +12,29 @@ main{
 flex-shrink: 0;
 display: flex;
 flex-direction: column;
-width: 70%;
-height: 65%;
+width: 75%;
+height: 85%;
 border-radius: 8px;
 border: 1px solid #E8E8E8;
 background: #FAFAFA;
-
+gap: 40px;
+justify-content: center;
 }
 .header{
-  flex:1
+  flex:1;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+}
+.cover{
+  margin-left: -15px;
+  align-self: center;
 }
 .authbtn{
   flex:1;
   display: flex;
   gap: 5px;
+  align-self: center;
 }

@@ -15,6 +15,8 @@ import { BoredComponent } from './bored/bored/bored.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LandingpageComponent } from './authentication/landingpage/landingpage.component';
 import { HomeComponent } from './home/home.component';
+import { SignuppageComponent } from './authentication/signuppage/signuppage.component';
+import { TasklistserviceService } from './TaskItService/tasklistservice.service';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,8 @@ import { HomeComponent } from './home/home.component';
     FormvalidatorDirective,
     BoredComponent,
     LandingpageComponent,
-    HomeComponent
+    HomeComponent,
+    SignuppageComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +40,7 @@ import { HomeComponent } from './home/home.component';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [TasklistserviceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -4,13 +4,13 @@
 <div class="content">
 
 <div class="header">
-  <h1>Welcome to <span style="color:green">TASK</span><span style="color:black">IT</span>
+  <h1>Welcome to <span style="color:green" (click)="callServer()">TASK</span><span style="color:black">IT</span>
   </h1>
-  <p>This platform allows you to keep track of tasks professionally, domestically, and more. Sign up today to get to work!</p>
-  <img src="/assets/icons/landing-page.svg" alt="" srcset="">
+  <p (click)="otracall()">This platform allows you to keep track of tasks professionally, domestically, and more. Sign up today to get to work!</p>
+  <div class="cover" style="height: 90%;" ><img src="/assets/icons/landing-page.svg" alt="" srcset="" style="max-height: 100%; width: auto;" ></div>
 </div>
 <div class="authbtn">
-  <div class="btnwrap"><button class="btn btn-success">Sign Up</button></div>
+  <div class="btnwrap"><button class="btn btn-success" routerLink="/signup">Sign Up</button></div>
   <p>or</p>
   <div class="btnwrap"><button class="btn btn-success">Log In</button></div>
 </div>
