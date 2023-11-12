@@ -17,6 +17,7 @@ import { LandingpageComponent } from './authentication/landingpage/landingpage.c
 import { HomeComponent } from './home/home.component';
 import { SignuppageComponent } from './authentication/signuppage/signuppage.component';
 import { TasklistserviceService } from './TaskItService/tasklistservice.service';
+import { SigninpageComponent } from './authentication/signinpage/signinpage.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { TasklistserviceService } from './TaskItService/tasklistservice.service'
     BoredComponent,
     LandingpageComponent,
     HomeComponent,
-    SignuppageComponent
+    SignuppageComponent,
+    SigninpageComponent
   ],
   imports: [
     BrowserModule,
