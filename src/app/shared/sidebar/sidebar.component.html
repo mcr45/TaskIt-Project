@@ -1,4 +1,4 @@
-<div class="conteiner">
+<div class="conteiner" *ngIf="isAuthenticated">
   <div class="top_sidebar">
     <h1 style="color: green;cursor: pointer;" (click)="GoHome()">TASK<span style="color: black; cursor: pointer;">IT</span>
     </h1>
@@ -13,8 +13,8 @@
     <hr>
     <div class="user-profile">
       <img src="https://tinyurl.com/yc22bz4y" alt=""><div class="account">
-        <p>pupjoe@puppities.bark</p>
-        <p>Pup Joe</p>
+        <p>{{userEmail}}</p>
+        <p>{{name}}</p>
       </div>
     </div>
   </div>

@@ -1,1 +1,26 @@
-<p>signinpage works!</p>
+
+<main>
+
+  <div class="content">
+
+  <div class="header">
+    <h1>Welcome to <span style="color:green">TASK</span><span style="color: black;">IT</span>!</h1>
+    <p>Log In and get back to your tasks</p>
+  </div>
+  <div class="signupform form-group">
+  <form action="" #signupform="ngForm" (ngSubmit)="SignFormSubmit(signupform)" >
+   <label for="email">Email</label>
+  <input type="email" name="email" id="email" class="form-control" class="form-control" ngModel required>
+
+  <label for="password" class="for">Password</label>
+  <input type="password" name="password" id="password" class="form-control" ngModel required minlength="8">
+  <div class="buttons"><button class="btn btn-success" type="button">Cancel</button><button class="btn btn-success" type="submit">Sign In</button></div>
+  </form>
+
+  </div>
+  <div><p class="alert alert-danger mt-3" *ngIf="errMsg">{{ errMsg }}</p></div>
+
+  </div>
+
+
+  </main>
