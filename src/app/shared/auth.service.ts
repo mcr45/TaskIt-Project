@@ -23,6 +23,8 @@ export interface AuthResp {
   providedIn: 'root',
 })
 export class AuthService {
+  userToken:string=null
+
   currentUser = new BehaviorSubject<User>(null);
 
   constructor(private http: HttpClient) {}

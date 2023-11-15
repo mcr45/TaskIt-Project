@@ -18,6 +18,7 @@ import { HomeComponent } from './home/home.component';
 import { SignuppageComponent } from './authentication/signuppage/signuppage.component';
 import { TasklistserviceService } from './TaskItService/tasklistservice.service';
 import { SigninpageComponent } from './authentication/signinpage/signinpage.component';
+import { AuthService } from './shared/auth.service';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,7 @@ import { SigninpageComponent } from './authentication/signinpage/signinpage.comp
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [TasklistserviceService],
+  providers: [TasklistserviceService,AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
