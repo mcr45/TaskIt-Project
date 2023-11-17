@@ -39,7 +39,7 @@ export class HttpconnectionService {
       this.taskserv.saveTasks(res)
     })
  */
-    return this.auth.currentUser.pipe(
+    /* return this.auth.currentUser.pipe(
       take(1),
       exhaustMap((user) => {
         return this.http
@@ -53,6 +53,20 @@ export class HttpconnectionService {
             priority: string;
           }[])=>{  this.taskserv.saveTasks(tasks)}))})
     );
-  }
+  } using interceptor now*/
+
+  return this.http.get(this.fireBaseURL).subscribe((res:{
+    name: string;
+    date: string;
+    status: string;
+    priority: string;
+  }[]| [])=>{
+    this.taskserv.saveTasks(res)
+  })
+
+
+
+
+}
 
 }
