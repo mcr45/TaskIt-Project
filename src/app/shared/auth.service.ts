@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { User } from './user.model';
 import { BehaviorSubject, pipe, tap } from 'rxjs';
+import { ActivatedRoute, Router } from '@angular/router';
 
 const apk = 'AIzaSyAkrzuZWyj_ZYKvy5kH2tsTF_XKt_zBU2A';
 const signupurl =
@@ -27,7 +28,7 @@ export class AuthService {
 
   currentUser = new BehaviorSubject<User>(null);
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient,private  route:Router,private active:ActivatedRoute) {}
 
   signUp(email: string, password: string) {
     return this.http
@@ -57,6 +58,12 @@ export class AuthService {
           this.handleAuth(email, localId, idToken, +expiresIn);
         })
       );
+  }
+
+  signOut(){
+    this.currentUser.next(null)
+    this.route.navigate(['/signin'])
+    console.log('Signout called')
   }
 
   handleAuth(email: string, userId: string, token: string, exp: number) {

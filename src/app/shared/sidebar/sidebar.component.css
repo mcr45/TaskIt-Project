@@ -34,3 +34,24 @@ box-sizing: border-box;
 .user-profile p{
   font-size: 13px;
 }
+.logout{
+  display: flex;
+  height: 20px;
+  gap: 5px;
+}
+/* .logout select{
+  height: 20px;
+  background-color: #f1d868;
+  border-radius: 15px;
+  font-size: small;
+}
+ */
+.logout #lot{
+  width: 65px;
+  height: 20px;
+  text-align: start;
+  font-size: smaller;
+  background-color: aquamarine;
+  border-radius: 15px;
+  color: rgb(53, 9, 6);
+}

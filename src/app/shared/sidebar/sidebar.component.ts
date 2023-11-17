@@ -46,5 +46,9 @@ GoBored(){
   this.router.navigate(['/home/bored'],{relativeTo:this.route})
 }
 
+OnSignOut(){
+  this.auth.signOut()
+}
+
 
 }

@@ -14,7 +14,9 @@
     <div class="user-profile">
       <img src="https://tinyurl.com/yc22bz4y" alt=""><div class="account">
         <p>{{userEmail}}</p>
-        <p>{{name}}</p>
+        <div class="logout">
+          <p>{{name}}</p><!-- <select><option value="" (click)="OnSignOut()" >Log out</option></select> --> <button (click)="OnSignOut()" id="lot">Sign out</button>
+        </div>
       </div>
     </div>
   </div>
