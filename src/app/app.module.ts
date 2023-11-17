@@ -12,13 +12,14 @@ import { KanbanitemComponent } from './kanban/kanbanitem/kanbanitem.component';
 import { AppRoutingModule } from './app-routing.module';
 import { FormvalidatorDirective } from './TaskItDirectives/formvalidator.directive';
 import { BoredComponent } from './bored/bored/bored.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { LandingpageComponent } from './authentication/landingpage/landingpage.component';
 import { HomeComponent } from './home/home.component';
 import { SignuppageComponent } from './authentication/signuppage/signuppage.component';
 import { TasklistserviceService } from './TaskItService/tasklistservice.service';
 import { SigninpageComponent } from './authentication/signinpage/signinpage.component';
 import { AuthService } from './shared/auth.service';
+import { AuthInterceptorService } from './shared/auth-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -41,9 +42,12 @@ import { AuthService } from './shared/auth.service';
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
   ],
-  providers: [TasklistserviceService,AuthService],
+  providers: [TasklistserviceService,AuthService,  {provide:HTTP_INTERCEPTORS,
+    useClass:AuthInterceptorService,
+    multi:true
+    }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
