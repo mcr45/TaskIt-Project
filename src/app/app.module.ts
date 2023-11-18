@@ -21,6 +21,7 @@ import { SigninpageComponent } from './authentication/signinpage/signinpage.comp
 import { AuthService } from './shared/auth.service';
 import { AuthInterceptorService } from './shared/auth-interceptor.service';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +37,8 @@ import { AuthInterceptorService } from './shared/auth-interceptor.service';
     LandingpageComponent,
     HomeComponent,
     SignuppageComponent,
-    SigninpageComponent
+    SigninpageComponent,
+
   ],
   imports: [
     BrowserModule,
