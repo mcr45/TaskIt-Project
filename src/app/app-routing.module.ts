@@ -15,15 +15,16 @@ import { LandingpageComponent } from './authentication/landingpage/landingpage.c
 import { HomeComponent } from './home/home.component';
 import { SignuppageComponent } from './authentication/signuppage/signuppage.component';
 import { SigninpageComponent } from './authentication/signinpage/signinpage.component';
+import { authGuardGuard } from './shared/auth-guard.guard';
 
 const appRoutes:Routes=[/* {path:'',redirectTo:'/home', pathMatch:'full'} */,
 /* {path:'',component:AppComponent} */,
 {path:'',component:LandingpageComponent,pathMatch:'full',children:[]},
 {path:'signup',component:SignuppageComponent},
 {path:'signin',component:SigninpageComponent},
-{path:'home',component:HomeComponent,children:[{path:'tasks',component:TasklistComponent},
-{path:'kanban',component:KanbanlistComponent},
-{path:'bored',component:BoredComponent}]},
+{path:'home',component:HomeComponent,children:[{path:'tasks',component:TasklistComponent,canActivate:[authGuardGuard]},
+{path:'kanban',component:KanbanlistComponent,canActivate:[authGuardGuard]},
+{path:'bored',component:BoredComponent,canActivate:[authGuardGuard]}]},
 
 
 ];
