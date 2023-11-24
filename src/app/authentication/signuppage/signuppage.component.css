@@ -8,11 +8,12 @@ main{
 }
 
 .content{
-  background-color: rgb(211, 158, 240);
-  border-radius: 18px;
+  background-color: #FAFAFA;
+  border:1px solid #E8E8E8;
+  border-radius: 8px;
 padding: 20px;
 height: 90%;
-width: 65%;
+width: 734px;
 display: flex;
 flex-direction: column;
 align-items: flex-start;
@@ -32,8 +33,18 @@ input{
 }
 .buttons{
   width: 50%;
-  margin-left: 29%;
+  margin-left: 15%;
   margin-top: 15px;
   display: flex;
   gap: 10px;
+}
+
+#loginspan{
+  color: #48C15B;
+font-family: Inter;
+font-size: 14px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+cursor: pointer;
 }

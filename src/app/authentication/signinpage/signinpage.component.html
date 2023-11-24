@@ -4,8 +4,8 @@
   <div class="content">
 
   <div class="header">
-    <h1>Welcome to <span style="color:green">TASK</span><span style="color: black;">IT</span>!</h1>
-    <p>Log In and get back to your tasks</p>
+    <h1>Welcome back</h1>
+    <p>Let's get to work</p>
   </div>
   <div class="signupform form-group">
   <form action="" #signupform="ngForm" (ngSubmit)="SignFormSubmit(signupform)" >
@@ -14,7 +14,7 @@
 
   <label for="password" class="for">Password</label>
   <input type="password" name="password" id="password" class="form-control" ngModel required minlength="8">
-  <div class="buttons"><button class="btn btn-success" type="button" routerLink="/">Cancel</button><button class="btn btn-success" type="submit">Sign In</button></div>
+  <div class="buttons"><p>Don't have an account?<span id="signupspan" routerLink="/signup">Sign up</span></p><button class="btn btn-success" type="submit">Sign In</button></div>
   </form>
 
   </div>
