@@ -16,9 +16,12 @@ height: 100%;
 .to-do, .in-progress, .done{
 
 width: 41%;
-background-color: rgba(240, 229, 229, 0.857);
-border-radius: 5px;
+/* background-color: rgba(240, 229, 229, 0.857);
+border-radius: 5px; */
 box-sizing: border-box;
+border-radius: 8px;
+border: 1px solid #DCDCDC;
+background: #F9F9F9;
 }
 
 .to-do-list, .in-progress-list, .done-list{
@@ -38,8 +41,8 @@ padding: 5px;
 .item{
   box-sizing: border-box;
   padding:5px;
-background-color: whitesmoke;
-border-radius: 8px;
+/* background-color: whitesmoke;
+border-radius: 8px; */
 height: 120px;
 margin-bottom: 5px;
 /*
@@ -48,7 +51,9 @@ box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 
 
 
-
+border-radius: 8px;
+border: 1px solid #DCDCDC;
+background: #FFF;
 }
 
 .kanban-grid{
@@ -123,21 +128,21 @@ width: 60px; */
 }
 
 .pink{
-  background-color: pink;
-  color: blue;
+  background-color: #A7FC99;
+  color: black;
   font-family: 'Courier New', Courier, monospace;
   font-weight: 700;
 }
 .green{
-  background-color: greenyellow;
-  color: brown;
+  background-color: #99F6FC;
+  color: black;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-weight: 600;
 }
 
 .blue{
-  background-color: aqua;
-  color: crimson;
+  background-color: #FCF299;;
+  color: black;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-weight: 300;
 }
