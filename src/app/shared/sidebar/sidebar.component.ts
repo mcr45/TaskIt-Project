@@ -13,6 +13,11 @@ import { Subscription } from 'rxjs';
 export class SidebarComponent {
 
   constructor(private route:ActivatedRoute, private router:Router,private http:HttpClient,private auth:AuthService){}
+  taskselected:boolean
+  kanbanselected:boolean
+  boredselected:boolean
+
+
 
 
   isAuthenticated:boolean
@@ -32,17 +37,29 @@ export class SidebarComponent {
 
 
 GoToTask (){
+  this.taskselected=true
+  this.kanbanselected=false
+  this.boredselected=false
   this.router.navigate(['/home/tasks'],{relativeTo:this.route})
 }
 GoToKanban(){
+  this.taskselected=false
+  this.kanbanselected=true
+  this.boredselected=false
   this.router.navigate(['/home/kanban'],{relativeTo:this.route})
 }
 
 GoHome(){
+  this.taskselected=false
+  this.kanbanselected=false
+  this.boredselected=false
   this.router.navigate(['/home'],{relativeTo:this.route})
 }
 
 GoBored(){
+  this.taskselected=false
+  this.kanbanselected=false
+  this.boredselected=true
   this.router.navigate(['/home/bored'],{relativeTo:this.route})
 }
 

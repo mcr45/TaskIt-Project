@@ -55,3 +55,8 @@ box-sizing: border-box;
   border-radius: 15px;
   color: rgb(53, 9, 6);
 }
+
+.selected{
+  background-color: green;
+  color: black;
+}

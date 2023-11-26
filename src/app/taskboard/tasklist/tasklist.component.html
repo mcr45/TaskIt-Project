@@ -4,7 +4,7 @@
   <h1>Tasks List</h1>
 
   <div class="new-task-button">
-    <button class="btn btn-success" (click)="showForm()">New Task</button>
+    <div class="filter"><span>Filters:</span><div class="select-btn"><select name="" id=""><option value="" style="display: none;">Status</option></select><select name="" id=""><option value="" style="display: none;">Date</option></select><select name="" id=""><option value="" style="display: none;">Priority</option></select></div></div><button class="btn btn-success" (click)="showForm()">New Task</button>
   </div>
   <div class="board">
     <div class="bar">
@@ -30,6 +30,7 @@
       [taskindex]="i"
       (taskdeleted)="OnTaskDeleted($event)"
       (taskedit)="OnTaskEdit($event)"
+      [ngStyle]="{'border-bottom':'solid 1px black'}"
     ></app-task-component>
   </div>
   <app-newtask

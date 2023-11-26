@@ -3,9 +3,9 @@
     <h1 style="color: green;cursor: pointer;" (click)="GoHome()">TASK<span style="color: black; cursor: pointer;">IT</span>
     </h1>
     <div style="display: flex; flex-direction: column;gap: 15px;width: 95px;justify-content: center;align-items: center;">
-      <button class="btn btn-success"  style="width: 92.2px;" (click)="GoToTask()">Task List</button>
-    <button class="btn btn-success" style="width: 92.2px;"  (click)="GoToKanban()">KanBan</button>
-    <button class="btn btn-success"  style="width: 92.2px;"  (click)="GoBored()">I'm bored</button>
+      <button class="btn btn-outline-success"  style="width: 92.2px;" (click)="GoToTask()" [ngClass]="{selected:taskselected}">Task List</button>
+    <button class="btn btn-outline-success" style="width: 92.2px;"  (click)="GoToKanban()" [ngClass]="{selected:kanbanselected}">KanBan</button>
+    <button class="btn btn-outline-success"  style="width: 92.2px;"  (click)="GoBored()" [ngClass]="{selected:boredselected}">I'm bored</button>
     </div>
   </div>
 
