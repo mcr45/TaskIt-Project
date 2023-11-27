@@ -46,6 +46,17 @@ export class TasklistserviceService {
     this.listchanged.emit(this.kanbanlist.slice());
     console.log(this.kanbanlist)
   }
+  updateFB(tasks:{
+    name: string;
+    date: string;
+    status: string;
+    priority: string;
+  }[]){
+    this.kanbanlist=tasks
+  }
+
+
+
   saveTask(t: {
     name: string;
     date: string;

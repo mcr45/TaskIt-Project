@@ -61,7 +61,7 @@ export class HttpconnectionService {
     status: string;
     priority: string;
   }[]| [])=>{
-    this.taskserv.saveTasks(res)
+    this.taskserv.updateFB(res)
   })
 
 
