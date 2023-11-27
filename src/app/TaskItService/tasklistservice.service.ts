@@ -1,17 +1,18 @@
 import { EventEmitter, Injectable, Output } from '@angular/core';
+import { HttpconnectionService } from '../shared/http/httpconnection.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class TasklistserviceService {
-  constructor() {}
+  constructor(/* private http:HttpconnectionService */) {}
 
   kanbanlist: {
     name: string;
     date: string;
     status: string;
     priority: string;
-  }[] = [
+  }[] /* [
     { name: 'clean', date: 'Nov 20', priority: 'High', status: 'To Do' },
     {
       name: 'dinner at Pappo"s',
@@ -21,8 +22,10 @@ export class TasklistserviceService {
     },
     { name: 'eat', date: 'Nov 24', priority: 'High', status: 'Done' },
     { name: 'run', date: 'Nov 25', priority: 'High', status: 'Done' },
-  ];
+  ]; */
+  ngOnInit(){
 
+  }
   @Output() listchanged = new EventEmitter<
     { name: string; date: string; status: string; priority: string }[]
   >();
@@ -42,7 +45,8 @@ export class TasklistserviceService {
     status: string;
     priority: string;
   }[]){
-    this.kanbanlist=tasks
+    this.kanbanlist=tasks/*
+    this.http.saveTasksToFireBase() */
     this.listchanged.emit(this.kanbanlist.slice());
     console.log(this.kanbanlist)
   }

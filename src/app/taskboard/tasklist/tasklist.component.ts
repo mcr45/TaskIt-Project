@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { TasklistserviceService } from 'src/app/TaskItService/tasklistservice.service';
+import { HttpconnectionService } from 'src/app/shared/http/httpconnection.service';
 
 @Component({
   selector: 'app-tasklist',
@@ -8,14 +9,22 @@ import { TasklistserviceService } from 'src/app/TaskItService/tasklistservice.se
 })
 export class TasklistComponent {
 
- constructor(private taskserv:TasklistserviceService){}
+ constructor(private taskserv:TasklistserviceService,private http:HttpconnectionService){}
  tasksList
 /*
 tasksList=[{name:'clean',date:'Nov 20',priority:'High',status:"To Do"},{name:'dinner at Pappo"s',date:'Nov 10',priority:'Low',status:"To Do"},{name:'eat',date:'Nov 24',priority:'High',status:"To Do"}]
 ngOnInit(){console.log(this.tasksList)} */
 
 ngOnInit(){
-  this.tasksList=this.taskserv.getTasks()
+  this.http.fetchTasksFB().subscribe((res:{
+    name: string;
+    date: string;
+    status: string;
+    priority: string;
+  }[]| [])=>{
+    this.tasksList=res
+    this.taskserv.saveTasks(res)
+  })
   this.taskserv.listchanged.subscribe((tasks)=>{this.tasksList=tasks})
 }
 
@@ -47,6 +56,7 @@ OnTaskDeleted(e){
   /* console.log(e)
 this.tasksList.splice(e,1) */
 this.taskserv.tasklistDelete(e)
+this.http.updateFB(this.tasksList)
 
 }
 
@@ -57,6 +67,7 @@ OnTaskCreated(e){
 /*
   this.tasksList.push({name:e.title,date:e.date,priority:e.priority,status:e.status}) */
   this.taskserv.saveTask({name:e.title,date:e.date,priority:e.priority,status:e.status})
+  this.http.updateFB(this.tasksList)
   this.showF=!this.showF
 
 }
@@ -81,6 +92,7 @@ if(e){/*
 this.tasksList[e.id]={name:e.title,date:e.date,priority:e.priority,status:e.status} */
 /* console.log(this.tasksList.indexOf(e.title)) */
 this.taskserv.tasklistEdit(e.id,{name:e.title,date:e.date,priority:e.priority,status:e.status})
+this.http.updateFB(this.tasksList)
 this.showFE=false
 }
 

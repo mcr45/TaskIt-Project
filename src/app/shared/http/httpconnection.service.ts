@@ -22,6 +22,19 @@ export class HttpconnectionService {
     private auth: AuthService
   ) {}
 
+  updateFB(uptasks:{
+      name: string;
+      date: string;
+      status: string;
+      priority: string;
+    }[]){
+this.http.put(this.fireBaseURL, uptasks).subscribe((res) => {
+      console.log(res);
+
+    })
+  }
+
+
   saveTasksToFireBase() {
     const tasks = this.taskserv.getTasks();
     this.http.put(this.fireBaseURL, tasks).subscribe((res) => {
@@ -55,18 +68,20 @@ export class HttpconnectionService {
     );
   } using interceptor now*/
 
-  return this.http.get(this.fireBaseURL).subscribe((res:{
+  return this.http.get(this.fireBaseURL)/* .subscribe((res:{
     name: string;
     date: string;
     status: string;
     priority: string;
   }[]| [])=>{
-    this.taskserv.updateFB(res)
-  })
+    this.taskserv.saveTasks(res)
+  }) */
 
 
 
 
 }
+
+
 
 }

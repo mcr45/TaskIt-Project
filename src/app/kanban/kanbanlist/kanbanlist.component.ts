@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TasklistserviceService } from 'src/app/TaskItService/tasklistservice.service';
+import { HttpconnectionService } from 'src/app/shared/http/httpconnection.service';
 
 @Component({
   selector: 'app-kanbanlist',
@@ -25,10 +26,21 @@ export class KanbanlistComponent implements OnInit{
     { name: 'eat', date: 'Nov 24', priority: 'High', status: 'Done' }, { name: 'run', date: 'Nov 25', priority: 'High', status: 'Done' },
   ]; */
 
-  constructor(private taskitservice:TasklistserviceService){}
+  constructor(private taskitservice:TasklistserviceService,private http:HttpconnectionService){}
+
+
 
   ngOnInit(){
-    this.kanbanlist=this.taskitservice.getTasks()
+   /*  this.kanbanlist=this.taskitservice.getTasks() */
+   this.http.fetchTasksFB().subscribe((res:{
+    name: string;
+    date: string;
+    status: string;
+    priority: string;
+  }[]| [])=>{
+    this.kanbanlist=res
+    this.taskitservice.saveTasks(res)
+  })
     this.taskitservice.listchanged.subscribe((tasks)=>{
 
       this.kanbanlist=tasks
@@ -52,7 +64,7 @@ export class KanbanlistComponent implements OnInit{
   demo(e,t){
     console.log(e.target.value,t)
     this.taskitservice.editTask(t,e.target.value)
-
+    this.http.updateFB(this.kanbanlist)
   console.log(this.kanbanlist)
   }
 OnEdit(id,value){

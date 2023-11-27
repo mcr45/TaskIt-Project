@@ -20,6 +20,7 @@ import { TasklistserviceService } from './TaskItService/tasklistservice.service'
 import { SigninpageComponent } from './authentication/signinpage/signinpage.component';
 import { AuthService } from './shared/auth.service';
 import { AuthInterceptorService } from './shared/auth-interceptor.service';
+import { HttpconnectionService } from './shared/http/httpconnection.service';
 
 
 @NgModule({
@@ -46,7 +47,7 @@ import { AuthInterceptorService } from './shared/auth-interceptor.service';
     AppRoutingModule,
     HttpClientModule,
   ],
-  providers: [TasklistserviceService,AuthService,  {provide:HTTP_INTERCEPTORS,
+  providers: [TasklistserviceService,HttpconnectionService,AuthService,  {provide:HTTP_INTERCEPTORS,
     useClass:AuthInterceptorService,
     multi:true
     }],
